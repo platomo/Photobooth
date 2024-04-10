@@ -1,0 +1,27 @@
+base_files:
+  - "LICENSE"
+  - "README.md"
+  - "requirements.txt"
+configurations:
+  - package_path: python_template
+    files:
+      - "install.cmd"
+    suffix: "win"
+    output_file_name: python_template
+    additional_requirements:
+      - ""
+  - package_path: python_template
+    files:
+      - "install.sh"
+    suffix: "linux"
+    output_file_name: python_template
+    additional_requirements:
+      - ""
+  - package_path: python_template
+    files:
+      - source: "install.sh"
+        destination: "install.command"
+    suffix: "macos"
+    output_file_name: python_template
+    additional_requirements:
+      - ""
