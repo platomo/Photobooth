@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-echo "Install python_template development environment."
+echo "Install Photobooth development environment."
 
 WORKING_DIR=$(pwd)
 VENV="$WORKING_DIR"/venv

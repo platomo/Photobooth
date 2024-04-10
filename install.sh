@@ -9,7 +9,7 @@ done
 DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 
 set -e
-echo "Install python_template."
+echo "Install Photobooth."
 
 echo "$DIR"
 cd "$DIR" || exit

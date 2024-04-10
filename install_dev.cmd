@@ -1,4 +1,4 @@
-echo Install python_template development environment.
+echo Install Photobooth development environment.
 call install.cmd
 call venv\Scripts\activate
 pip install -r requirements-dev.txt

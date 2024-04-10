@@ -1,4 +1,4 @@
-echo Install python_template.
+echo Install photobooth.
 @echo off
 FOR /F "tokens=* USEBACKQ" %%F IN (`python3.11 --version`) DO SET PYTHON_VERSION=%%F
 

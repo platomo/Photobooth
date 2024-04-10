@@ -3,7 +3,7 @@ requires = ["hatchling", "hatch-requirements-txt"]
 build-backend = "hatchling.build"
 
 [project]
-name = "python_template"
+name = "photobooth"
 version = "0.0.1"
 dynamic = ["dependencies"]
 
@@ -11,7 +11,7 @@ dynamic = ["dependencies"]
 files = ["requirements.txt"]
 
 [tool.hatch.version]
-path = "python_template/version.py"
+path = "photobooth/version.py"
 
 [tool.black]
 line-length = 88
