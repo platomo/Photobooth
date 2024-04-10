@@ -1,11 +1,10 @@
-# python_template
+# Photobooth
 
-This repository is intended to serve as a base for new Python repositories.
-Not everything is necessarily up to date and working.
-Each file (especially the workflows) may need to be updated.
+This is currently a small script I wrote a few years ago for a friends' wedding.
+I currently just set up this repo to save this old script.
 
-Many files need to be adjusted to the actual package name. Searching for `python_template` in all files is a good starting point.
+The box took photos, assembled them and printed them using cups.
 
-The repository settings should also be checked in any case.
-Especially all settings that concern security.
-It must be verified who has access to the repository.
+There are multiple LEDs and a single button for user interaction.
+
+The python script was started on boot using the `/etc/rc.local` file.
