@@ -110,10 +110,13 @@ while True:
 
     gpout = subprocess.check_output("lpstat -p", stderr=subprocess.STDOUT, shell=True)
 
-    while "Leerlauf" not in gpout:
-        gpout = subprocess.check_output(
-            "lpstat -p", stderr=subprocess.STDOUT, shell=True
-        )
+    # while "Leerlauf" not in gpout:
+    #     gpout = subprocess.check_output(
+    #         "lpstat -p", stderr=subprocess.STDOUT, shell=True
+    #     )    # while "Leerlauf" not in gpout:
+    #     gpout = subprocess.check_output(
+    #         "lpstat -p", stderr=subprocess.STDOUT, shell=True
+    #     )
     #  print("warte noch auf Drucker")
 
     time.sleep(60)
