@@ -1,9 +1,9 @@
 #!/bin/bash
 
-mogrify -resize 968x648 /home/pi/photobooth/*.jpg
-montage /home/pi/photobooth/*.jpg -tile 2x2 -geometry +10+10 /home/pi/photobooth/temp_montage.jpg
+mogrify -resize 968x648 ~/photobooth/*.jpg
+montage ~/photobooth/*.jpg -tile 2x2 -geometry +10+10 ~/photobooth/temp_montage.jpg
 suffix=$(date +"%y-%m-%d_%H-%M-%S")
-cp /home/pi/photobooth/temp_montage.jpg /home/pi/photobooth_final/PB_${suffix}.jpg
+cp ~/photobooth/temp_montage.jpg ~/photobooth_final/PB_${suffix}.jpg
 sleep 1
-lp -d Canon_CP820 /home/pi/photobooth_final/PB_${suffix}.jpg
-rm /home/pi/photobooth/*.jpg
+lp -d Canon_CP820 ~/photobooth_final/PB_${suffix}.jpg
+rm ~/photobooth/*.jpg
