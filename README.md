@@ -16,7 +16,7 @@ The python script was started on boot using the `/etc/rc.local` file.
 - python3-gpiozero
 - git
 - gphoto2
-- cups
+- imagemagick
 
 ## Configuring cups
 
