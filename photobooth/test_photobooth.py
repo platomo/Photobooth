@@ -28,7 +28,7 @@ button_leds = LEDBoard(27, 22, pwm=True)
 # printer_leds = cam_leds[2:]
 printer_leds = LEDBoard(14, 15, 18, 17, pwm=True)
 
-go_button = Button(4, hold_time=5, pull_up=False)
+go_button = Button(4, hold_time=5, pull_up=True)
 go_button.when_held = reboot_shutdown
 
 cam_leds.on()
@@ -54,7 +54,7 @@ while True:
     # led.off()
     button_leds.off()
 
-    subprocess.call("rm /home/pi/photobooth/*.jpg", shell=True)
+    subprocess.call("rm /home/frunika/photobooth/*.jpg", shell=True)
 
     snap = 0
 
@@ -72,7 +72,7 @@ while True:
             led.pulse(0, 0.5, 1, background=False)
 
         print("SNAP " + str(snap))
-        filenm = "/home/pi/photobooth/photobooth_" + str(snap) + ".jpg"
+        filenm = "/home/frunika/photobooth/photobooth_" + str(snap) + ".jpg"
         gpout = subprocess.check_output(
             "gphoto2 --capture-image-and-download --keep --filename " + filenm,
             stderr=subprocess.STDOUT,
@@ -95,7 +95,7 @@ while True:
 
     # print("photos stitchen")
 
-    subprocess.call("/home/pi/assemble_and_print", shell=True)
+    subprocess.call("/home/frunika/assemble_and_print", shell=True)
 
     cam_leds.off()
     snap_leds.off()
