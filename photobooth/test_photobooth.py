@@ -74,7 +74,7 @@ while True:
         print("SNAP " + str(snap))
         filenm = "/home/pi/photobooth/photobooth_" + str(snap) + ".jpg"
         gpout = subprocess.check_output(
-            "gphoto2 --capture-image-and-download --filename " + filenm,
+            "gphoto2 --capture-image-and-download --keep --filename " + filenm,
             stderr=subprocess.STDOUT,
             shell=True,
         )
