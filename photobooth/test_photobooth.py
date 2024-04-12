@@ -20,15 +20,15 @@ def reboot_shutdown():
         subprocess.call("sudo nohup reboot", shell=True)
 
 
-cam_leds = LEDBoard(23, 24, 19, 26, 9, 10, pwm=True)
+cam_leds = LEDBoard(0, 5, 6, 13, 19, 26, pwm=True)
 # snap_leds = cam_leds[:4]
-snap_leds = LEDBoard(16, 6, 7, 5, pwm=True)
+snap_leds = LEDBoard(12, 16, 20, 21, pwm=True)
 # button_leds = cam_leds[:2]
-button_leds = LEDBoard(27, 22, pwm=True)
+button_leds = LEDBoard(23, 24, pwm=True)
 # printer_leds = cam_leds[2:]
-printer_leds = LEDBoard(14, 15, 18, 17, pwm=True)
+printer_leds = LEDBoard(14, 15, 17, 18, pwm=True)
 
-go_button = Button(4, hold_time=5, pull_up=True)
+go_button = Button(2, hold_time=5, pull_up=True)
 go_button.when_held = reboot_shutdown
 
 cam_leds.on()
