@@ -20,6 +20,7 @@ def reboot_shutdown():
         subprocess.call("sudo nohup reboot", shell=True)
 
 
+print("initializing leds")
 cam_leds = LEDBoard(0, 5, 6, 13, 19, 26, pwm=True)
 # snap_leds = cam_leds[:4]
 snap_leds = LEDBoard(12, 16, 20, 21, pwm=True)
@@ -28,16 +29,20 @@ button_leds = LEDBoard(23, 24, pwm=True)
 # printer_leds = cam_leds[2:]
 printer_leds = LEDBoard(14, 15, 17, 18, pwm=True)
 
+print("initializing buttons")
 go_button = Button(2, hold_time=5, pull_up=True)
 go_button.when_held = reboot_shutdown
 
+print("turn leds on")
 cam_leds.on()
 snap_leds.on()
 button_leds.on()
 printer_leds.on()
 
+print("wait for button press")
 go_button.wait_for_press()
 
+print("turn leds off")
 cam_leds.off()
 snap_leds.off()
 button_leds.off()
@@ -49,6 +54,7 @@ while True:
         time.sleep(1.8)
 
     go_button.wait_for_press()
+    print("Let's go!")
 
     # for led in button_leds:
     # led.off()
@@ -57,8 +63,6 @@ while True:
     subprocess.call("rm /home/frunika/photobooth/*.jpg", shell=True)
 
     snap = 0
-
-    print("Let's go!")
 
     cam_leds.blink(0, 0, 6, 0, 1, background=False)
 
